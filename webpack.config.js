@@ -121,7 +121,8 @@ let config = {
 		}),
 		new CopyWebpackPlugin([
 			{
-				from: 'static/favicons',
+				context: 'static',
+				from: 'favicons/**/*',
 				to: 'images'
 			}
 		]),

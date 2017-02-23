@@ -1,0 +1,26 @@
+[
+  {
+    "levelName": "easy",
+    "sideA": 4,
+    "sideB": 5,
+    "uniqPercent": 30
+  },
+  {
+    "levelName": "normal",
+    "sideA": 5,
+    "sideB": 6,
+    "uniqPercent": 33
+  },
+  {
+    "levelName": "hard",
+    "sideA": 6,
+    "sideB": 7,
+    "uniqPercent": 36
+  },
+  {
+    "levelName": "extreme",
+    "sideA": 7,
+    "sideB": 8,
+    "uniqPercent": 39
+  }
+]

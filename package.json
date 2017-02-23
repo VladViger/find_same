@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/VladViger/find_same.git"
   },
   "license": "ISC",
   "main": "webpack.config.js",
