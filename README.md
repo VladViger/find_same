@@ -6,6 +6,7 @@
 
 * write description
 * optimize favicon
+* add other image packs beside 'catsImgs'
 
 ### Do later:
 

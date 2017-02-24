@@ -17,12 +17,17 @@ class App extends React.Component {
 		this.setState({ levelData: newData });
 	}
 
+	handleStopGame() {
+		this.setState({ levelData: null });
+	}
+
 	render() {
 		const levelData = this.state.levelData;
 		return (
 			<div className="layout">
 				{levelData ? (
 					<GameField
+						onStop={ () => this.handleStopGame() }
 						{ ...levelData }
 					/>
 				) : (

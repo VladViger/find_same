@@ -1,6 +1,8 @@
 import React from 'react';
 
+import assist from '../scripts/assist';
 import levelsData from '../data/levels.json';
+import catsImgs from '../data/cats.json';
 import '../styles/StartMenu.less';
 
 class StartMenu extends React.Component {
@@ -18,14 +20,27 @@ class StartMenu extends React.Component {
 	}
 
 	handleSubmit() {
-		let level = this.state.level;
-		if (!level) return;
-		let data = {
-			height: level.sideA,
-			width: level.sideB,
-			imgArr: []
-		};
+		if (!this.state.level) return;
+		let { sideA, sideB, uniqPercent } = this.state.level;
+		let imgArr = this.createImgArr(catsImgs, sideA*sideB, uniqPercent);
+		let data = { sideA, sideB, imgArr };
 		this.props.onStart(data);
+	}
+
+	createImgArr(imgs, length, uniqPercent) {
+		let outputArr = [ ...imgs ];
+		assist.shuffleArr(outputArr);
+		outputArr.length = Math.round(length*uniqPercent*0.01);
+		outputArr = outputArr.concat(outputArr);
+
+		let i = 0;
+		while (outputArr.length < length) {
+			outputArr.push(outputArr[i]);
+			outputArr.push(outputArr[i]);
+			i++;
+		}
+		assist.shuffleArr(outputArr);
+		return outputArr;
 	}
 
 	render() {
