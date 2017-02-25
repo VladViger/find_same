@@ -32,7 +32,7 @@ class App extends React.Component {
 					/>
 				) : (
 					<StartMenu
-						onStart={ (d) => this.handleSetLevel(d) }
+						onStart={ (data) => this.handleSetLevel(data) }
 					/>
 				)}
 			</div>
